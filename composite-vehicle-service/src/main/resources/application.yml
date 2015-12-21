@@ -1,0 +1,9 @@
+spring:
+    application:
+        name: vehicle-service
+server: 
+    port: 8883
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://127.0.0.1:8761/eureka/
