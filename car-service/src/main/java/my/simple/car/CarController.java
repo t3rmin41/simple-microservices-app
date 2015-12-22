@@ -24,7 +24,7 @@ public class CarController {
     
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public String index() {
-        return "Car Service is running";
+        return "index";
     }
     
 	@ResponseBody
