@@ -7,15 +7,15 @@ import javax.inject.Inject;
 import my.vehicle.entity.Car;
 
 import org.springframework.cloud.netflix.hystrix.EnableHystrix;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
 
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 
 @EnableHystrix
-@RestController
+@Controller
 public class CarController {
 
     @Inject
@@ -26,12 +26,14 @@ public class CarController {
         return "Car Service is running";
     }
     
+	@RequestBody
     @HystrixCommand(commandKey = "getCars", groupKey = "Cars")
     @RequestMapping(value = "/cars", method = RequestMethod.GET)
     public List<Car> getCars() {
         return carService.getAllCars();
     }
     
+	@RequestBody
     @RequestMapping(value = "/car/{carId}", method = RequestMethod.GET)
     public Car getCarById(@PathVariable("carId") Long carId) {
         return carService.getCarById(carId);
