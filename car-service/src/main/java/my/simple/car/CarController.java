@@ -35,7 +35,7 @@ public class CarController {
     }
     
 	@ResponseBody
-    @RequestMapping(value = "/car/{carId}", method = RequestMethod.GET)
+    @RequestMapping(value = "/cars/{carId}", method = RequestMethod.GET)
     public Car getCarById(@PathVariable("carId") Long carId) {
         return carService.getCarById(carId);
     }

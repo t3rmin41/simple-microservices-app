@@ -5,11 +5,24 @@
     <title>Cars View</title>
     <script type="text/javascript" src="./bower_resources/angular/angular.min.js"></script>
     <script type="text/javascript" src="./bower_resources/angular-resource/angular-resource.min.js"></script>
+
     <script type="text/javascript" src="./app/app.js"></script>
     <script type="text/javascript" src="./app/controllers/carcontroller.js"></script>
     <script type="text/javascript" src="./app/services/carservice.js"></script>
+
     <link rel="stylesheet" href="./bower_resources/bootstrap-css-only/css/bootstrap.min.css" />
 </head>
 <body>
+    <div ng-app="simpleApp">
+        <div ng-controller="SimpleController">
+            <h1>{{data.message + "world"}}</h1>
+        </div>
+        <div class="{{data.message}}">
+        </div>
+    </div>
+    <div ng-app="carsApp">
+        <div ng-controller="CarController">
+        </div>
+    </div>
 </body>
 </html>

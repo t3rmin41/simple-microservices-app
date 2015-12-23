@@ -31,7 +31,7 @@ public class TruckController {
     }
     
     @ResponseBody
-    @RequestMapping(value = "/truck/{truckId}", method = RequestMethod.GET) 
+    @RequestMapping(value = "/trucks/{truckId}", method = RequestMethod.GET) 
     public Truck getTruckById(@PathVariable("truckId") Long truckId) {
         return truckService.getTruckById(truckId);
     }

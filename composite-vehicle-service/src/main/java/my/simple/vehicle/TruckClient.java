@@ -17,6 +17,6 @@ interface TruckClient {
     @RequestMapping(value = "/trucks", method = RequestMethod.GET)
     List<Truck> getTrucks();
     
-    @RequestMapping(value = "/truck/{id}", method = RequestMethod.GET)
+    @RequestMapping(value = "/trucks/{id}", method = RequestMethod.GET)
     Truck getTruckById(@PathVariable("id") Long id);
 }

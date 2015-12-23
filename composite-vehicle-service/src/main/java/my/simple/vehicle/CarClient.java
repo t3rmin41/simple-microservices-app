@@ -15,6 +15,6 @@ interface CarClient {
     @RequestMapping(value = "/cars", method = RequestMethod.GET)
     List<Car> getAllCars();
     
-    @RequestMapping(value = "/car/{id}", method = RequestMethod.GET)
+    @RequestMapping(value = "/cars/{id}", method = RequestMethod.GET)
     Car getCarById(@PathVariable("id") Long id);
 }
