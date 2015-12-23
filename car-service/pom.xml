@@ -3,7 +3,7 @@
   <groupId>simple-microservice</groupId>
   <artifactId>car-service</artifactId>
   <version>0.0.1-SNAPSHOT</version>
-
+  <!-- Project properties -->
   <properties>
     <entity.version>0.0.1-SNAPSHOT</entity.version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
