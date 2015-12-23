@@ -1,0 +1,15 @@
+######################
+# Node
+######################
+/node/**
+/node_modules/**
+
+######################
+# SASS
+######################
+.sass-cache/**
+
+.settings
+.project
+.classpath
+**/target/

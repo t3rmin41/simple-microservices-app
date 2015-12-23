@@ -11,8 +11,6 @@ public class CarConfiguration extends WebMvcConfigurerAdapter {
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
         registry.addResourceHandler("/bower_resources/**")
                 .addResourceLocations("classpath:/templates/bower_components/");
-        registry.addResourceHandler("/css/**")
-                .addResourceLocations("classpath:/templates/css/");
         registry.addResourceHandler("/app/**")
                 .addResourceLocations("classpath:/templates/app/");
     }

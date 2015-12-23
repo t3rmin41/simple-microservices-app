@@ -1,19 +1,28 @@
 <!DOCTYPE html>
-<html ng-app=""><!-- thymeleaf hack for LEGACYHTML5 -->
-<head>
+<html>
+    <head>
     <meta charset="UTF-8" />
     <title>Cars View</title>
-    <script type="text/javascript" src="bower_resources/angular/angular.js"></script>
-    <script type="text/javascript" src="app/app.js"></script>
-    <link rel="stylesheet" href="css/mycss.css" />
+    <script type="text/javascript" src="./bower_resources/angular/angular.min.js"></script>
+    <script type="text/javascript" src="./bower_resources/angular-resource/angular-resource.min.js"></script>
+
+    <script type="text/javascript" src="./app/app.js"></script>
+    <script type="text/javascript" src="./app/controllers/carcontroller.js"></script>
+    <script type="text/javascript" src="./app/services/carservice.js"></script>
+
+    <link rel="stylesheet" href="./bower_resources/bootstrap-css-only/css/bootstrap.min.css" />
 </head>
 <body>
-    <div ng-controller="CarsController">
-        <!-- <button ng-click="getCar()">Get car from server template resource</button>  -->
-        <p>Car model : {{car.model}}</p>
+    <div ng-app="simpleApp">
+        <div ng-controller="SimpleController">
+            <h1>{{data.message + "world"}}</h1>
+        </div>
+        <div class="{{data.message}}">
+        </div>
     </div>
-    <div class="myclass">
-        <p>My text</p>
+    <div ng-app="carsApp">
+        <div ng-controller="CarController">
+        </div>
     </div>
 </body>
 </html>

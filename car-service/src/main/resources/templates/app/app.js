@@ -1,15 +1,9 @@
-function CarsController($scope, $http){
-    //$scope.getCar = function() {           
-        $http({
-            method: 'GET',
-            url: 'http://localhost:8881/car/2'
-        }).
-        success(function(data, status, headers, config) {
-            $scope.car = data;
-        }).
-        error(function(data, status, headers, config) {
-          // called asynchronously if an error occurs
-          // or server returns response with an error status.
-        });
-    //};
-}
+//angular.module('carsApp',['ngResource']);
+angular.module('simpleApp', [])
+.controller('SimpleController', function($scope) {
+    $scope.data = {message: "Hello"};
+});
+
+angular.module('carsApp.controllers', []);
+angular.module('carsApp.services', []);
+angular.module('carsApp', ['ngResource', 'carsApp.controllers', 'carsApp.services']);
