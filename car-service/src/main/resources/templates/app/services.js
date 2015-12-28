@@ -1,3 +1,10 @@
-angular.module('carsApp.services').factory('Entry', function($resource) {
-    return $resource('/cars/:id'); // Note the full endpoint address
-});
+angular.module('carsApp.services').
+    factory('CarService', function($http) {
+        var CarService = {};
+        $http.get('/cars').success(function(response) {
+            CarService.data = response;
+        });
+        console.log(CarService.data);
+        return CarService;
+    }
+);
