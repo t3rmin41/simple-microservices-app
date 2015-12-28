@@ -1,14 +1,10 @@
-//angular.module('carsApp',['ngResource']);
-//angular.module('simpleApp', [])
-//.controller('SimpleController', function($scope) {
-//    $scope.data = {message: "Hello"};
-//});
+//Only 1 (one!) AngularJS application can be auto-bootstrapped per HTML document.
+/*
+var simpleApp = angular.module('simpleApp', [])
+    .controller('SimpleController', function($scope) {
+        $scope.helloData = {message: "Hello"};
+    });
+/**/
 
-//angular.module('carsApp.controllers', []);
-//angular.module('carsApp.services', []);
-//angular.module('carsApp', ['ngResource', 'carsApp.controllers', 'carsApp.services']);
+var carApp = angular.module('carsApp', ['ngResource', 'carsApp.controllers', 'carsApp.services']);
 
-
-'use strict';
-
-angular.module('carsApp', ['carApp.services', 'carApp.controllers']);

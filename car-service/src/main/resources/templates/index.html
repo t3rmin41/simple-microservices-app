@@ -8,8 +8,8 @@
     <script type="text/javascript" src="./bower_resources/angular-resource/angular-resource.min.js"></script>
 
     <script type="text/javascript" src="./app/app.js"></script>
-    <script type="text/javascript" src="./app/controllers.js"></script>
-    <script type="text/javascript" src="./app/services.js"></script>
+    <script type="text/javascript" src="./app/controllers/carcontroller.js"></script>
+    <script type="text/javascript" src="./app/services/carservice.js"></script>
 
     <link rel="stylesheet" href="./bower_resources/bootstrap-css-only/css/bootstrap.min.css" />
 </head>
@@ -17,14 +17,25 @@
     <!-- 
     <div ng-app="simpleApp">
         <div ng-controller="SimpleController">
-            <h1>{{data.message + "world"}}</h1>
-        </div>
-        <div class="{{data.message}}">
+            <h1>{{helloData.message + " world"}}</h1>
         </div>
     </div>
     -->
     <div ng-app="carsApp">
         <div ng-controller="CarController">
+            <h3>Table content</h3>
+            <table>
+                <tr>
+                    <th ng-repeat="(key, val) in cars[0]">{{key}}</th>
+                </tr>
+                <tr ng-repeat="car in cars">
+                    <td ng-repeat="(key, val) in car">{{val}}</td>
+                </tr>
+            </table>
+            <h3>Unordered list content</h3>
+            <ul ng-repeat="car in cars">
+                <li ng-repeat="(key, val) in car">{{val}}</li>
+            </ul>
         </div>
     </div>
 </body>
