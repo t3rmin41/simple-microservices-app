@@ -23,7 +23,7 @@
     -->
     <div ng-app="carsApp">
         <div ng-controller="CarController">
-            <h3>Table content</h3>
+            <h4>Table content</h4>
             <table>
                 <tr>
                     <th ng-repeat="(key, val) in cars[0]">{{key}}</th>
@@ -32,9 +32,13 @@
                     <td ng-repeat="(key, val) in car">{{val}}</td>
                 </tr>
             </table>
-            <h3>Unordered list content</h3>
+            <h4>Cars list content</h4>
             <ul ng-repeat="car in cars">
-                <li ng-repeat="(key, val) in car">{{val}}</li>
+                <li>{{car.manufacturer}}</li>
+            </ul>
+            <h4>Items list content</h4>
+            <ul ng-repeat="something in items">
+                <li>{{something.manufacturer}}</li>
             </ul>
         </div>
     </div>

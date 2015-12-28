@@ -9,5 +9,5 @@ var simpleApp = angular.module('simpleApp', [])
 //usage of angular.module:
 //angular.module('%module_name%', ['%dependent_module_name%',...])
 
-var carApp = angular.module('carsApp', ['ngResource', 'carsApp.controllers', 'carsApp.services']);
+var carApp = angular.module('carsApp', ['ngResource', 'carsApp.services', 'carsApp.controllers']);
 

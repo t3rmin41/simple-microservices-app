@@ -1,9 +1,9 @@
 //$http - built-in service
 angular.module('carsApp.services', ['ngResource']).factory('CarService', function ($http) {
     return {
-        getCars: function(carId) {
+        getCars : function(carId) {
             if (carId != undefined) {
-                $http.get('/cars/' + carId)
+                $http({ method: 'GET', url: '/cars/' + carId })
                     .success(function (data, status, headers) {
                         console.log('Data in service carId == ' + carId);
                         console.log(data);
@@ -12,7 +12,7 @@ angular.module('carsApp.services', ['ngResource']).factory('CarService', functio
                         console.log('error');
                     });
             } else {
-                $http.get('/cars')
+                $http({ method: 'GET', url: '/cars/' })
                     .success(function (data, status, headers) {
                         console.log('Data in service');
                         console.log(data);
@@ -21,7 +21,6 @@ angular.module('carsApp.services', ['ngResource']).factory('CarService', functio
                         console.log('error');
                     });
             }
-            
         }
     }
 });
