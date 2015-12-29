@@ -19,10 +19,9 @@ public class VehicleController {
     @Inject
     private VehicleService vehicleService;
     
-    @ResponseBody
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public String index() {
-        return "Vehicle service running";
+        return "index";
     }
     
     @ResponseBody

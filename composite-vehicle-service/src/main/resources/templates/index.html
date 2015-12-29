@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="UTF-8" />
+    <title>Vehicles View</title>
+    <script type="text/javascript" src="./bower_resources/angular/angular.min.js"></script>
+    <script type="text/javascript" src="./bower_resources/angular-route/angular-route.min.js"></script>
+    <script type="text/javascript" src="./bower_resources/angular-resource/angular-resource.min.js"></script>
+
+    <script type="text/javascript" src="./app/app.js"></script>
+    <script type="text/javascript" src="./app/controllers/vehiclecontroller.js"></script>
+    <script type="text/javascript" src="./app/services/vehicleservice.js"></script>
+
+    <link rel="stylesheet" href="./bower_resources/bootstrap-css-only/css/bootstrap.min.css" />
+</head>
+<body>
+    <!-- 
+    <div ng-app="simpleApp">
+        <div ng-controller="SimpleController">
+            <h1>{{helloData.message + " world"}}</h1>
+        </div>
+    </div>
+    -->
+    <div ng-app="vehiclesApp">
+        <div ng-controller="VehicleController">
+            <h4>Vehicle list content</h4>
+            <h5>Cars</h5>
+            <ul ng-repeat="car in cars">
+                <li>{{car.id}} {{car.manufacturer}} {{car.model}} {{car.price}}</li>
+            </ul>
+            <h5>Trucks</h5>
+            <ul ng-repeat="truck in trucks">
+                <li>{{truck.id}} {{truck.title}} {{truck.price}}</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
