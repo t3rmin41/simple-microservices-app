@@ -24,21 +24,23 @@
     <div ng-app="carsApp">
         <div ng-controller="CarController">
             <h4>Table content</h4>
-            <table>
-                <tr>
-                    <th ng-repeat="(key, val) in cars[0]">{{key}}</th>
-                </tr>
-                <tr ng-repeat="car in cars">
-                    <td ng-repeat="(key, val) in car">{{val}}</td>
-                </tr>
+            <table border="1">
+                <thead>
+                    <tr>
+                        <th ng-repeat="(key, val) in cars[0]">{{key}}</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="car in cars">
+                        <td ng-repeat="(key, val) in car">{{val}}</td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                </tfoot>
             </table>
             <h4>Cars list content</h4>
             <ul ng-repeat="car in cars">
                 <li>{{car.manufacturer}}</li>
-            </ul>
-            <h4>Items list content</h4>
-            <ul ng-repeat="something in items">
-                <li>{{something.manufacturer}}</li>
             </ul>
         </div>
     </div>
