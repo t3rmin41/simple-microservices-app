@@ -3,7 +3,7 @@
 angular.module('carsApp.services', ['ngResource']).factory('CarService', function ($http, $q) {
     return {
         getCars : function(carId) {
-            /**/
+            /*
             var promise;
             if (carId != undefined) {
                 promise = $http({ method : 'GET', url : '/cars/' + carId})
@@ -26,15 +26,17 @@ angular.module('carsApp.services', ['ngResource']).factory('CarService', functio
             }
             return promise;
             /**/
-            /*
+            
             if (carId != undefined) {
                 return $http({ method : 'GET', url : '/cars/' + carId})
-                    .then(function (response) {
+                    .then(function (result) {
                         console.log('Data in service carId == ' + carId);
-                        console.log(response.data);
+                        console.log(result);
+                        return result.data;
                     })
-                    .catch(function (response) {
+                    .catch(function (result) {
                         console.log('error');
+                        return result.data;
                     })
                     .finally(function (response) {
                         console.log('Finished getting from service');
@@ -43,10 +45,12 @@ angular.module('carsApp.services', ['ngResource']).factory('CarService', functio
                 return $http({ method : 'GET', url : '/cars/'})
                 .then(function (response) {
                     console.log('Data in service');
-                    console.log(response.data);
+                    console.log(response);
+                    return response.data;
                 })
-                .catch(function (response) {
+                .catch(function (result) {
                     console.log('error');
+                    return result.data;
                 })
                 .finally(function (response) {
                     console.log('Finished getting from service');

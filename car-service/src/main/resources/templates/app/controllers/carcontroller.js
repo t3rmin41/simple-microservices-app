@@ -7,18 +7,15 @@ carApp.controller('CarController', function($scope, CarService) {
     var id = 1;
     CarService.getCars(id)
         .then(
-            function(response) { 
-                $scope.cars = [response.data];
+            function(data) { 
+                $scope.cars = [data];
                 console.log("$scope.cars inside CarService call = " + JSON.stringify($scope.cars));
-            },
-            function(error) { 
-                $scope.hasErrors = true;
-            }
-        ).
-        catch(function() {
-            console.log("Exception caught");
-        }).
-        finally(function() {
+        })
+        .catch(function(data) {
+            console.log("Error caught");
+            $scope.hasErrors = true;
+        })
+        .finally(function() {
             console.log("Finished getting car");
         });
     $scope.items = [
@@ -26,15 +23,22 @@ carApp.controller('CarController', function($scope, CarService) {
                     {"id":2,"model":"S80","manufacturer":"Volvo","price":500.27}
                    ];
     console.log("Static $scope.items = " + JSON.stringify($scope.items));
-//    CarService.getCars()
+    
+//    var carServicePromise = CarService.getCars();
+//    carServicePromise
 //        .then(
-//            function(response) { 
-//                $scope.cars = response.data;
+//            function(data) { 
+//                $scope.cars = data;
 //                console.log("$scope.cars inside CarService call = " + JSON.stringify($scope.cars));
-//            },
-//            function(error) { 
-//                $scope.hasErrors = true;
-//            }
-//        );
+//         })
+//         .catch(
+//             function(data) {
+//                 console.log("Error caught");
+//                 $scope.hasErrors = true;
+//         })
+//         .finally(
+//             function(){
+//                 console.log('Finally finished from controller');
+//         });
     console.log("$scope.cars outside CarService call = " + JSON.stringify($scope.cars));
 });
