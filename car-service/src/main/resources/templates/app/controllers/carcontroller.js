@@ -14,7 +14,13 @@ carApp.controller('CarController', function($scope, CarService) {
             function(error) { 
                 $scope.hasErrors = true;
             }
-        );
+        ).
+        catch(function() {
+            console.log("Exception caught");
+        }).
+        finally(function() {
+            console.log("Finished getting car");
+        });
     $scope.items = [
                     {"id":1,"model":"S600","manufacturer":"Mercedes","price":1000.52},
                     {"id":2,"model":"S80","manufacturer":"Volvo","price":500.27}
