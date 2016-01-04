@@ -30,9 +30,11 @@ public class VehicleController {
     public VehicleSummary getAllVehicles() {
         return vehicleService.getAllVehicles();
     }
-
+    
     @HystrixCommand
-    private String returnErrorMessage() {
-        return "Fallback error message";
+    private VehicleSummary returnErrorMessage() { // need to return the same type on the fallback as on commandKey call
+        VehicleSummary vehicleSummary = new VehicleSummary();
+        vehicleSummary.getErrors().add("Error getting vehicles");
+        return vehicleSummary;
     }
 }

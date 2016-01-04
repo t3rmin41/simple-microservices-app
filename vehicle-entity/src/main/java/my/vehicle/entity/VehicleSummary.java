@@ -1,11 +1,12 @@
 package my.vehicle.entity;
 
+import java.util.ArrayList;
 import java.util.List;
 
-public class VehicleSummary {
+public class VehicleSummary extends ResponseEntity{
 
-    private List<Car> cars;
-    private List<Truck> trucks;
+    private List<Car> cars = new ArrayList<Car>(); // this way we ensure that 'cars' are not null
+    private List<Truck> trucks = new ArrayList<Truck>(); // this way we ensure that 'trucks' are not null
 
     public List<Car> getCars() {
         return cars;

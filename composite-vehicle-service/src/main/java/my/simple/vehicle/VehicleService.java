@@ -26,8 +26,9 @@ public class VehicleService {
         
         VehicleSummary summary = new VehicleSummary();
         
-        summary.setCars(cars);
-        summary.setTrucks(trucks);
+        summary.getCars().addAll(cars); // since we ensured that getCars() won't return null,
+        // we add carClient.getAllCars() [which can be null eventually] to not null 'cars'  
+        summary.getTrucks().addAll(trucks);
         
         return summary;
     }
