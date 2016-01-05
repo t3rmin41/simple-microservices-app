@@ -1,6 +1,6 @@
 'use strict';
 
-//Usage: enter in shell node node-car-app.js
+//Usage: enter in shell "node node-car-app.js"
 
 var express = require('express');
 var http = require('http');
