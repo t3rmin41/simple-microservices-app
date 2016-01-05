@@ -1,9 +1,32 @@
 {
-  "name": "ng-spring-boot",
+  "name": "carapp",
+  "version": "0.0.1",
   "dependencies": {
-    "angular": "~1.4.8",
-    "angular-resource": "~1.4.8",
-    "angular-route": "~1.4.8",
-    "bootstrap-css-only": "~3.3.5"
+    "angular-animate": "~1.4.0",
+    "angular-cookies": "~1.4.0",
+    "angular-touch": "~1.4.0",
+    "angular-sanitize": "~1.4.0",
+    "angular-ui-router": "~0.2.15",
+    "bootstrap": "~3.3.4",
+    "angular-bootstrap": "~0.14.0",
+    "toastr": "~2.1.1",
+    "moment": "~2.10.3",
+    "animate.css": "~3.3.0",
+    "angular": "~1.4.0",
+    "angular-localization": "~1.2.1"
+  },
+  "devDependencies": {
+    "angular-mocks": "~1.4.0"
+  },
+  "overrides": {
+    "bootstrap": {
+      "main": [
+        "dist/css/bootstrap.css",
+        "dist/js/bootstrap.js"
+      ]
+    }
+  },
+  "resolutions": {
+    "angular": "~1.4.0"
   }
 }

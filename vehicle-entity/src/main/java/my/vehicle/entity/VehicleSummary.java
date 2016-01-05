@@ -5,8 +5,8 @@ import java.util.List;
 
 public class VehicleSummary extends ResponseEntity{
 
-    private List<Car> cars = new ArrayList<Car>(); // this way we ensure that 'cars' are not null
-    private List<Truck> trucks = new ArrayList<Truck>(); // this way we ensure that 'trucks' are not null
+    private List<Car> cars = new ArrayList<Car>(); // this way we ensure that 'cars' is not null
+    private List<Truck> trucks = new ArrayList<Truck>(); // this way we ensure that 'trucks' is not null
 
     public List<Car> getCars() {
         return cars;
