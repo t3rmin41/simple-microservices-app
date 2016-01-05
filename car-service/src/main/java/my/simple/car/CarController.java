@@ -8,6 +8,7 @@ import my.vehicle.entity.Car;
 
 import org.springframework.cloud.netflix.hystrix.EnableHystrix;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -27,6 +28,7 @@ public class CarController {
         return "index";
     }
     
+    @CrossOrigin(origins = "http://localhost:3000")
 	@ResponseBody
     @HystrixCommand(commandKey = "getCars", groupKey = "Cars")
     @RequestMapping(value = "/cars", method = RequestMethod.GET)
@@ -34,6 +36,7 @@ public class CarController {
         return carService.getAllCars();
     }
     
+    @CrossOrigin(origins = "http://localhost:3000")
 	@ResponseBody
     @RequestMapping(value = "/cars/{carId}", method = RequestMethod.GET)
     public Car getCarById(@PathVariable("carId") Long carId) {

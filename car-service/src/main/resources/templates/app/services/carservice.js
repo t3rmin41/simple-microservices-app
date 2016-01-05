@@ -28,7 +28,7 @@ angular.module('carsApp.services', ['ngResource']).factory('CarService', functio
             /**/
             
             if (carId != undefined) {
-                return $http({ method : 'GET', url : '/cars/' + carId})
+                return $http({ method : 'GET', url : 'http://localhost:8881/cars/' + carId})
                     .then(function (result) {
                         console.log('Data in service carId == ' + carId);
                         console.log(result);
@@ -42,7 +42,7 @@ angular.module('carsApp.services', ['ngResource']).factory('CarService', functio
                         console.log('Finished getting from service');
                     });
             } else {
-                return $http({ method : 'GET', url : '/cars/'})
+                return $http({ method : 'GET', url : 'http://localhost:8881/cars/'})
                 .then(function (response) {
                     console.log('Data in service');
                     console.log(response);
