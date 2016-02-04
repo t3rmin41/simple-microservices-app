@@ -20,14 +20,21 @@
   </parent>
 
     <dependencies>
+        <!-- Project dependencies -->
         <dependency>
             <groupId>simple-microservice</groupId>
             <artifactId>vehicle-entity</artifactId>
             <version>${entity.version}</version>
         </dependency>
+        <!-- SpringBoot components -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-tomcat</artifactId>
+            <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -37,6 +44,7 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-thymeleaf</artifactId>
         </dependency>
+        <!-- Spring Cloud components -->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-eureka</artifactId>
@@ -46,12 +54,6 @@
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-hystrix</artifactId>
             <version>${spring.cloud.version}</version>
-        </dependency>
-        <!-- -->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-tomcat</artifactId>
-            <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>org.springframework.cloud</groupId>
@@ -63,6 +65,7 @@
             <artifactId>spring-cloud-starter-turbine</artifactId>
             <version>${spring.cloud.version}</version>
         </dependency>
+        <!-- Other dependencies -->
         <dependency>
             <groupId>javax.inject</groupId>
             <artifactId>javax.inject</artifactId>

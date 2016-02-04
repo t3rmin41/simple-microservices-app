@@ -20,12 +20,13 @@
   </parent>
 
     <dependencies>
-        <!-- SpringBoot components -->
+        <!-- Project dependencies -->
         <dependency>
             <groupId>simple-microservice</groupId>
             <artifactId>vehicle-entity</artifactId>
             <version>${entity.version}</version>
         </dependency>
+        <!-- SpringBoot components -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
