@@ -6,6 +6,7 @@
   <!-- Project properties -->
   <properties>
     <entity.version>0.0.1-SNAPSHOT</entity.version>
+    <spring.cloud.version>1.0.3.RELEASE</spring.cloud.version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <start-class>my.simple.car.CarApplication</start-class>
     <java.version>1.8</java.version>
@@ -30,17 +31,21 @@
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-thymeleaf</artifactId>
         </dependency>
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-eureka</artifactId>
-            <version>1.0.3.RELEASE</version>
+            <version>${spring.cloud.version}</version>
         </dependency>
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-hystrix</artifactId>
-            <version>1.0.3.RELEASE</version>
+            <version>${spring.cloud.version}</version>
         </dependency>
         <!-- -->
         <dependency>
@@ -51,12 +56,12 @@
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-zuul</artifactId>
-            <version>1.0.3.RELEASE</version>
+            <version>${spring.cloud.version}</version>
         </dependency>
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-turbine</artifactId>
-            <version>1.0.3.RELEASE</version>
+            <version>${spring.cloud.version}</version>
         </dependency>
         <dependency>
             <groupId>javax.inject</groupId>

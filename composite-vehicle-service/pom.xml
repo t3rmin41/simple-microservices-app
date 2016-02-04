@@ -6,6 +6,7 @@
 
   <properties>
     <entity.version>0.0.1-SNAPSHOT</entity.version>
+    <spring.cloud.version>1.0.3.RELEASE</spring.cloud.version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <start-class>my.simple.vehicle.VehicleApplication</start-class>
     <java.version>1.8</java.version>
@@ -19,6 +20,7 @@
   </parent>
 
     <dependencies>
+        <!-- SpringBoot components -->
         <dependency>
             <groupId>simple-microservice</groupId>
             <artifactId>vehicle-entity</artifactId>
@@ -30,39 +32,44 @@
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-thymeleaf</artifactId>
         </dependency>
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-eureka</artifactId>
-            <version>1.0.3.RELEASE</version>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-hystrix</artifactId>
-            <version>1.0.3.RELEASE</version>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-feign</artifactId>
-            <version>1.0.3.RELEASE</version>
-        </dependency>
-        <!-- -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-tomcat</artifactId>
             <scope>provided</scope>
         </dependency>
+        <!-- Spring Cloud components -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-eureka</artifactId>
+            <version>${spring.cloud.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-hystrix</artifactId>
+            <version>${spring.cloud.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-feign</artifactId>
+            <version>${spring.cloud.version}</version>
+        </dependency>
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-zuul</artifactId>
-            <version>1.0.3.RELEASE</version>
+            <version>${spring.cloud.version}</version>
         </dependency>
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-turbine</artifactId>
-            <version>1.0.3.RELEASE</version>
+            <version>${spring.cloud.version}</version>
         </dependency>
+        <!-- Other dependencies -->
         <dependency>
             <groupId>javax.inject</groupId>
             <artifactId>javax.inject</artifactId>
