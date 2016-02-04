@@ -38,8 +38,15 @@ public class CarController {
     
     @CrossOrigin(origins = "http://localhost:3000")
 	@ResponseBody
+	@HystrixCommand(commandKey = "getCars", groupKey = "Cars", fallbackMethod = "getCarByIdError")
     @RequestMapping(value = "/cars/{carId}", method = RequestMethod.GET)
     public Car getCarById(@PathVariable("carId") Long carId) {
         return carService.getCarById(carId);
     }
+    
+    @HystrixCommand
+    private Car getCarByIdError(Long carId) {
+        return new Car();
+    }
+    
 }
